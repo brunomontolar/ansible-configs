@@ -1,0 +1,15 @@
+[raspberry]
+192.168.86.183 ansible_ssh_user=pi
+192.168.86.185 ansible_ssh_user=pi
+192.168.86.203 ansible_ssh_user=pi
+
+[proxmox_host]
+192.168.86.182 ansible_ssh_user=root
+
+[proxmox_vms]
+192.168.86.210 ansible_ssh_user=bmont
+
+[proxmox_lxc]
+192.168.86.221 ansible_ssh_user=root
+192.168.86.222 ansible_ssh_user=root
+192.168.86.223 ansible_ssh_user=root
