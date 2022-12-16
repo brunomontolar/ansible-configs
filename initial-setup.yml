@@ -1,9 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: Set authorized keys taken from url
-      ansible.posix.authorized_key:
-        user: "{{ ansible_ssh_user }}"
-        state: present
-        exclusive: yes
-        key: https://github.com/brunomontolar.keys

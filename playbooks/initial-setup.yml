@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+    - name: Set authorized keys taken from url
+      ansible.posix.authorized_key:
+        user: "{{ ansible_ssh_user }}"
+        state: present
+        exclusive: yes
+        key: https://github.com/brunomontolar.keys
+    - name: Configure sshd
+      lineinfile:
+        path: "/etc/ssh/sshd_config"
+        regex: "^(#)?{{item.key}}"
+        line: "{{item.key}} {{item.value}}"
+        state: present
+      loop:
+        - { key: "AllowTcpForwarding", value: "yes" }
+      # notify:
+      #   - restart sshd
