@@ -13,3 +13,6 @@
 192.168.86.221 ansible_ssh_user=root
 192.168.86.222 ansible_ssh_user=root
 192.168.86.223 ansible_ssh_user=root
+
+[aws]
+3.94.8.34 ansible_ssh_user=ubuntu
